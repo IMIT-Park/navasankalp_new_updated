@@ -1,0 +1,94 @@
+{
+  "project_info": {
+    "project_number": "761849461795",
+    "project_id": "navasankalp-dd551",
+    "storage_bucket": "navasankalp-dd551.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761849461795:android:d0c82511c9290a0ba48596",
+        "android_client_info": {
+          "package_name": "com.dcc.navasankalp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761849461795-34rl05lmf5qeuf2t7cif6f5lnrne7h8q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dcc.navasankalp",
+            "certificate_hash": "c8e9ca688bd3377e11fca1f6ad8768c8d9275d79"
+          }
+        },
+        {
+          "client_id": "761849461795-505ddl9qodtgqhhsk7lcmdbakr9umcns.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dcc.navasankalp",
+            "certificate_hash": "d2627a230c922cb475742719b51450060dc38556"
+          }
+        },
+        {
+          "client_id": "761849461795-6g0ndm6s9u347nr8h78mpb0elel4hrm4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dcc.navasankalp",
+            "certificate_hash": "0ef4beaa8b0a73a2d2ec5e4f6dfd19b97cf62370"
+          }
+        },
+        {
+          "client_id": "761849461795-k05hcdviutpsijh7v4fijoscjakcsg2b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dcc.navasankalp",
+            "certificate_hash": "f96f7f0f449320f140e3040c01424451ce135bee"
+          }
+        },
+        {
+          "client_id": "761849461795-p620usosipf943j11b6qda7t5ep1hc6p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dcc.navasankalp",
+            "certificate_hash": "d19fa1990430e83a9ea4b15a50c5fd72946c48cd"
+          }
+        },
+        {
+          "client_id": "761849461795-tbuu4vnbtqpdofmtvhjdqd3qtfb2tb1e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dcc.navasankalp",
+            "certificate_hash": "0349a04cc4005bbca2743d4636353e324559aa1f"
+          }
+        },
+        {
+          "client_id": "761849461795-s2oo4kvabaju0nfpqfb3vah178c484li.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVVZBk7QR2DGFL4aS45VacBp-bSM_RzG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761849461795-db0ct6s8hkmvbf4pphg9gnv1njrju461.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "761849461795-4vgqlnssniceejcok9vogvdop5dqq1bn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dcc.navasankalp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
