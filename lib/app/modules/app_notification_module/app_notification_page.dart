@@ -21,12 +21,12 @@ class NotificationPage extends GetWidget<NotificationController> {
         onLeadingPressed: () => Get.close(1),
         title: "Notifications",
       ),
-      body: notificationPageBody(),
+      body: notificationPageBody(""),
     );
   }
 }
 
-Widget notificationPageBody() {
+Widget notificationPageBody(String? payload) {
   final notificationController = Get.find<NotificationController>();
 
   return Obx(

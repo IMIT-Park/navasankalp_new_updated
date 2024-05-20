@@ -93,7 +93,7 @@ class FirebaseMessagingService extends GetxController {
         NotificationDetails(android: androidPlatformChannelSpecifics);
 
     // final imageUrl = message.data['image'];
-    final linkUrl = message.data['link'];
+    final linkUrl = message.data['link'];           
 
     await flutterLocalNotificationsPlugin.show(
       0,
