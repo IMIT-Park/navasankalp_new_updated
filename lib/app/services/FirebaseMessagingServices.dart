@@ -69,15 +69,15 @@ class FirebaseMessagingService extends GetxController {
     });
   }
 
-  void initializeNotifications() async {
-    const AndroidInitializationSettings initializationSettingsAndroid =
-        AndroidInitializationSettings('app_icon');
+  // void initializeNotifications() async {
+  //   const AndroidInitializationSettings initializationSettingsAndroid =
+  //       AndroidInitializationSettings('app_icon');
 
-    const InitializationSettings initializationSettings =
-        InitializationSettings(android: initializationSettingsAndroid);
+  //   const InitializationSettings initializationSettings =
+  //       InitializationSettings(android: initializationSettingsAndroid);
 
-    await flutterLocalNotificationsPlugin.initialize(initializationSettings);
-  }
+  //   await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+  // }
 
   void showNotification(RemoteMessage message) async {
     const AndroidNotificationDetails androidPlatformChannelSpecifics =

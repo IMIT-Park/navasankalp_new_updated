@@ -12,7 +12,7 @@ import 'package:navasankalp_application/app/modules/app_notification_module/app_
 import 'package:navasankalp_application/app/routes/app_pages.dart';
 import 'package:navasankalp_application/app/utils/common.dart';
 import 'package:navasankalp_application/app/utils/nava_sankalp_pref.dart';
-import 'package:platform_device_id/platform_device_id.dart';
+// import 'package:platform_device_id/platform_device_id.dart';
 
 import '../../../data/provider/global_data_provider.dart';
 
@@ -49,17 +49,17 @@ class DrawersController extends GetxController {
   Future<void> initPlatformState() async {
     String? deviceId;
     // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      deviceId = await PlatformDeviceId.getDeviceId;
+  //   try {
+  //     deviceId = await PlatformDeviceId.getDeviceId;
 
-      await Future.delayed(const Duration(seconds: 2), () {
-        _pref.deviceid.val = deviceId ?? "";
-        debugPrint("device id $deviceId");
-      });
-    } on PlatformException {
-      deviceId = 'Failed to get deviceId.';
-    }
-  }
+  //     await Future.delayed(const Duration(seconds: 2), () {
+  //       _pref.deviceid.val = deviceId ?? "";
+  //       debugPrint("device id $deviceId");
+  //     });
+  //   } on PlatformException {
+  //     deviceId = 'Failed to get deviceId.';
+  //   }
+  // }
 
   Future<void> signOut() async {
     try {
@@ -77,4 +77,5 @@ class DrawersController extends GetxController {
       log("Error during sign out: $e");
     }
   }
+}
 }

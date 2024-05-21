@@ -49,7 +49,7 @@ var arrayOfListTiles = [
   }, false),
   DrawerTileData(NavaSankalp.logout, "Log Out", () {
     DrawersController drawersController = Get.put(DrawersController());
-    drawersController.signOut();
+    // drawersController.signOut();
   }, false),
 ];
 

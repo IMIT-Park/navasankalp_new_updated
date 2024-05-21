@@ -28,7 +28,7 @@ class LoginController extends GetxController {
   RxBool isLoading = false.obs;
   Future<UserCredential?> signInWithGoogle() async {
     isLoading.value =true;
-    update();
+    // update();
     try {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
       if (googleUser == null) return null;

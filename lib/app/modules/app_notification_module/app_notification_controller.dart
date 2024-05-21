@@ -41,7 +41,7 @@ class NotificationController extends GetxController {
 
   void initialize() async {
     _firebaseMessagingService.configureFirebaseMessaging(handleNotification);
-    _firebaseMessagingService.initializeNotifications();
+    // _firebaseMessagingService.initializeNotifications();
     String? token = await FirebaseMessaging.instance.getToken();
     await Future.delayed(const Duration(seconds: 2), () {
       _pref.devicetoken.val = token ?? "";
