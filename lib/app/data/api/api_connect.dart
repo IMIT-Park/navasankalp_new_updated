@@ -36,7 +36,7 @@ class ApiConnect extends GetConnect {
 
   void _enableLogs() {
     httpClient.addRequestModifier<dynamic>((request) {
-      final pref = Get.find<NavaSankalpPref>();
+      final pref = NavaSankalpPref();
       _print('************** Request **************');
       _printKV('uri', request.url);
       _printKV('method', request.method);

@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:navasankalp_application/app/modules/app_notification_module/app_notification_controller.dart';
@@ -19,7 +18,7 @@ import '../../../data/provider/global_data_provider.dart';
 class DrawersController extends GetxController {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final _pref = Get.find<NavaSankalpPref>();
+  final _pref = NavaSankalpPref();
 
   final GlobalDataProvider _globalDataProvider = Get.find<GlobalDataProvider>();
 
@@ -39,7 +38,8 @@ class DrawersController extends GetxController {
 
   @override
   void onInit() {
-    final notificationController = Get.put<NotificationController>(NotificationController());
+    final notificationController =
+        Get.put<NotificationController>(NotificationController());
     notificationController.initialize();
     initPlatformState();
     // getDeviceIdentifier();
@@ -49,33 +49,33 @@ class DrawersController extends GetxController {
   Future<void> initPlatformState() async {
     String? deviceId;
     // Platform messages may fail, so we use a try/catch PlatformException.
-  //   try {
-  //     deviceId = await PlatformDeviceId.getDeviceId;
+    //   try {
+    //     deviceId = await PlatformDeviceId.getDeviceId;
 
-  //     await Future.delayed(const Duration(seconds: 2), () {
-  //       _pref.deviceid.val = deviceId ?? "";
-  //       debugPrint("device id $deviceId");
-  //     });
-  //   } on PlatformException {
-  //     deviceId = 'Failed to get deviceId.';
-  //   }
-  // }
+    //     await Future.delayed(const Duration(seconds: 2), () {
+    //       _pref.deviceid.val = deviceId ?? "";
+    //       debugPrint("device id $deviceId");
+    //     });
+    //   } on PlatformException {
+    //     deviceId = 'Failed to get deviceId.';
+    //   }
+    // }
 
-  Future<void> signOut() async {
-    try {
-      await _googleSignIn.signOut();
-      await _auth.signOut();
-      final deleteToken = GetStorage();
-      await deleteToken.remove(_pref.accessToken.key);
-      await deleteToken.remove(_pref.refreshToken.key);
-      await deleteToken.remove(_pref.googleAccessToken.key);
-      await deleteToken.remove(_pref.deviceid.key);
-      await deleteToken.remove(_pref.devicetoken.key);
-      Navigator.pop(Get.context!);
-      Get.toNamed(AppRoutes.login);
-    } catch (e) {
-      log("Error during sign out: $e");
-    }
+   
   }
-}
+   Future<void> signOut() async {
+      try {
+        // await _googleSignIn.signOut();
+        
+        final deleteToken = GetStorage();
+        await deleteToken.remove(_pref.accessToken.key);
+        await deleteToken.remove(_pref.refreshToken.key);
+        await _auth.signOut();
+        
+        Get.offNamedUntil(AppRoutes.login, (route) => false);
+        // Get.toNamed();
+      } catch (e) {
+        log("Error during sign out: $e");
+      }
+    }
 }

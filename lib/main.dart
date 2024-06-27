@@ -50,9 +50,8 @@ class MyApp extends StatelessWidget {
         onInit: () {
           Get.put(NavaSankalpBEProvider());
           Get.put(GlobalDataProvider());
-          Get.put(NavaSankalpPref());
-          Get.put(DrawersController());
-          // Get.put(NotificationController());
+         
+          
         },
         initialRoute: AppRoutes.splash,
         theme: AppThemes.themData,

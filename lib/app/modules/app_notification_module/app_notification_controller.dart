@@ -15,7 +15,7 @@ class NotificationController extends GetxController {
 
   // RxList<NotificationModel> notificationlist = <NotificationModel>[].obs;
   final notificationList = List<NotificationModel>.empty(growable: true).obs;
-  final _pref = Get.find<NavaSankalpPref>();
+  final _pref = NavaSankalpPref();
   final RxBool showImage = true.obs;
 
   void changeIcon(int index) {
@@ -67,7 +67,7 @@ class NotificationController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    final pref = Get.find<NavaSankalpPref>();
+    final pref = NavaSankalpPref();
     if (pref.accessToken.val.isNotEmpty) {
       if (notificationList.isEmpty) {
         Common.safeApiCall(getNotification());

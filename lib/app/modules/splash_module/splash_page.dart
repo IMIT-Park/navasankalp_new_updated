@@ -7,7 +7,7 @@ class SplashPage extends GetWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _pref = Get.find<NavaSankalpPref>();
+    final _pref = NavaSankalpPref();
 
     ///Your Function in the Future
     Future.delayed(const Duration(seconds: 2), () {

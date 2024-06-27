@@ -18,6 +18,7 @@ import 'package:navasankalp_application/app/modules/splash_module/splash_page.da
 import 'package:navasankalp_application/app/modules/transaction_module/transaction_binding.dart';
 import 'package:navasankalp_application/app/modules/transaction_module/transaction_page.dart';
 import 'package:navasankalp_application/app/utils/widgets/app_drawer/app_drawer.dart';
+import 'package:navasankalp_application/app/utils/widgets/app_drawer/app_drawer_binding.dart';
 
 part './app_routes.dart';
 
@@ -76,6 +77,7 @@ class AppPages {
     GetPage(
       name: AppRoutes.drawer,
       page: () => const CustomAppDrawer(),
+      binding: AppDrawerBindings()
     ),
   ];
 }

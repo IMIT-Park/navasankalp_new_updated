@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:navasankalp_application/app/data/model/home_model.dart';
 import 'package:navasankalp_application/app/data/model/paymentrequest_model.dart';
@@ -10,7 +11,10 @@ import 'package:navasankalp_application/app/utils/nava_sankalp_icons.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class HomeController extends GetxController {
-  HomeController();
+
+
+
+
 
   final homedata = HomeModel().obs;
   final _provider = Get.find<NavaSankalpBEProvider>();
@@ -23,6 +27,8 @@ class HomeController extends GetxController {
     super.onReady();
     Common.safeApiCall(getHomeData());
   }
+
+  
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -160,5 +166,15 @@ final socialMedia = [
   void onClose() {
     _razorpay!.clear();
     super.onClose();
+  }
+
+  final isVisible = RxBool(true); // Use RxBool for reactive updates
+
+  void handleScroll(ScrollDirection direction) {
+    if (direction == ScrollDirection.forward) {
+      isVisible.value = false;
+    } else if (direction == ScrollDirection.reverse) {
+      isVisible.value = true;
+    }
   }
 }
