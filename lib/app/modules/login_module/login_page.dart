@@ -24,7 +24,7 @@ class LoginPage extends GetWidget {
         ),
         text: "Call customer Care",
         style: AppTextStyles.base.s14.w400.whiteColor,
-        width: Common.getDeviceSepcificDouble(175, desktopValue: 170),
+        width: Common.getDeviceSepcificDouble(190, desktopValue: 180),
         height: Common.getDeviceSepcificDouble(35, desktopValue: 30),
         color: AppColors.lightBlue,
         padding: EdgeInsets.only(

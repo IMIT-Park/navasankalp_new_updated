@@ -182,84 +182,84 @@ Widget directoryTile({
                   height: Common.getDeviceSepcificDouble(4),
                 ),
                
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      children: [
-                         phoneNumber == ""
-                    ? const SizedBox()
-                    :
-                        Row(
-                          children: [
-                            const Icon(
-                              NavaSankalp.phone,
-                              size: 8,
-                              color: AppColors.orange,
-                            ),
-                            SizedBox(
-                              width: Common.getDeviceSepcificDouble(2,
-                                  desktopValue: 10),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                directoryController.launchPhone(landNumber);
-                              },
-                              child: Text(
-                                phoneNumber,
-                                overflow: TextOverflow.ellipsis,
-                                style: AppTextStyles.getAppTextStyleCustomized(
-                                  textWeight: FontWeight.w600,
-                                  textSize: 10,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height:
-                          Common.getDeviceSepcificDouble(15, desktopValue: 10),
-                      width:
-                          Common.getDeviceSepcificDouble(8, desktopValue: 10),
-                    ),
-                    landNumber == ""
-                    ? const SizedBox()
-                    :
-                    Expanded(
-                      child: Row(
-                        children: [
-                          const Icon(
-                            NavaSankalp.phone,
-                            size: 8,
-                            color: AppColors.orange,
-                          ),
-                          SizedBox(
-                            width: Common.getDeviceSepcificDouble(2,
-                                desktopValue: 10),
-                          ),
-                          Expanded(
-                            child: GestureDetector(
-                              onTap: () {
-                                directoryController.launchPhone(landNumber);
-                              },
-                              child: Text(
-                                landNumber,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: AppTextStyles.getAppTextStyleCustomized(
-                                  textWeight: FontWeight.w600,
-                                  textSize: 10,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   crossAxisAlignment: CrossAxisAlignment.start,
+                //   children: [
+                //     Column(
+                //       children: [
+                //          phoneNumber == ""
+                //     ? const SizedBox()
+                //     :
+                //         Row(
+                //           children: [
+                //             const Icon(
+                //               NavaSankalp.phone,
+                //               size: 8,
+                //               color: AppColors.orange,
+                //             ),
+                //             SizedBox(
+                //               width: Common.getDeviceSepcificDouble(2,
+                //                   desktopValue: 10),
+                //             ),
+                //             GestureDetector(
+                //               onTap: () {
+                //                 directoryController.launchPhone(landNumber);
+                //               },
+                //               child: Text(
+                //                 phoneNumber,
+                //                 overflow: TextOverflow.ellipsis,
+                //                 style: AppTextStyles.getAppTextStyleCustomized(
+                //                   textWeight: FontWeight.w600,
+                //                   textSize: 10,
+                //                 ),
+                //               ),
+                //             ),
+                //           ],
+                //         ),
+                //       ],
+                //     ),
+                //     SizedBox(
+                //       height:
+                //           Common.getDeviceSepcificDouble(15, desktopValue: 10),
+                //       width:
+                //           Common.getDeviceSepcificDouble(8, desktopValue: 10),
+                //     ),
+                //     // landNumber == ""
+                //     // ? const SizedBox()
+                //     // :
+                //     // Expanded(
+                //     //   child: Row(
+                //     //     children: [
+                //     //       const Icon(
+                //     //         NavaSankalp.phone,
+                //     //         size: 8,
+                //     //         color: AppColors.orange,
+                //     //       ),
+                //     //       SizedBox(
+                //     //         width: Common.getDeviceSepcificDouble(2,
+                //     //             desktopValue: 10),
+                //     //       ),
+                //     //       Expanded(
+                //     //         child: GestureDetector(
+                //     //           onTap: () {
+                //     //             directoryController.launchPhone(landNumber);
+                //     //           },
+                //     //           child: Text(
+                //     //             landNumber,
+                //     //             maxLines: 2,
+                //     //             overflow: TextOverflow.ellipsis,
+                //     //             style: AppTextStyles.getAppTextStyleCustomized(
+                //     //               textWeight: FontWeight.w600,
+                //     //               textSize: 10,
+                //     //             ),
+                //     //           ),
+                //     //         ),
+                //     //       ),
+                //     //     ],
+                //     //   ),
+                //     // ),
+                //   ],
+                // ),
                 email == "null"
                     ? const SizedBox()
                     : Row(
