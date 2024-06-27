@@ -48,8 +48,8 @@ var arrayOfListTiles = [
     Get.to(const PrivacyPolicyPage());
   }, false),
   DrawerTileData(NavaSankalp.logout, "Log Out", () {
-    DrawersController drawersController = Get.put(DrawersController());
-    drawersController.signOut();
+    final drawerController=Get.find<DrawersController>();
+   drawerController.signOut();
   }, false),
 ];
 

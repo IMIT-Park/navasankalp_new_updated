@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import 'package:get_storage/get_storage.dart';
@@ -30,11 +29,26 @@ class DrawersController extends GetxController {
     name.value = result.name.toString();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-    Common.safeApiCall(getUserData());
+   Future signOut() async {
+    try {
+      await _googleSignIn.signOut();
+      await _auth.signOut();
+      final deleteToken = GetStorage();
+      await deleteToken.remove(_pref.accessToken.key);
+    
+      Navigator.pop(Get.context!);
+      Get.toNamed(AppRoutes.login);
+    } catch (e) {
+      log("Error during sign out: $e");
+    }
   }
+}
+
+  // @override
+  // void onReady() {
+  //   super.onReady();
+  //   Common.safeApiCall(getUserData());
+  // }
 
   @override
   void onInit() {
@@ -43,7 +57,7 @@ class DrawersController extends GetxController {
     notificationController.initialize();
     initPlatformState();
     // getDeviceIdentifier();
-    super.onInit();
+    // super.onInit();
   }
 
   Future<void> initPlatformState() async {
@@ -61,21 +75,4 @@ class DrawersController extends GetxController {
     //   }
     // }
 
-   
   }
-   Future<void> signOut() async {
-      try {
-        // await _googleSignIn.signOut();
-        
-        final deleteToken = GetStorage();
-        await deleteToken.remove(_pref.accessToken.key);
-        await deleteToken.remove(_pref.refreshToken.key);
-        await _auth.signOut();
-        
-        Get.offNamedUntil(AppRoutes.login, (route) => false);
-        // Get.toNamed();
-      } catch (e) {
-        log("Error during sign out: $e");
-      }
-    }
-}

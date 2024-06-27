@@ -69,7 +69,7 @@ class DefaultFirebaseOptions {
     storageBucket: 'navasankalp-dd551.appspot.com',
     androidClientId: '761849461795-08b8ed1lgp82443i87erbvg3hli9ceu9.apps.googleusercontent.com',
     iosClientId: '761849461795-8598lbrur4f19h4tlfmsl1kd6j9p0rce.apps.googleusercontent.com',
-    iosBundleId: 'com.example.navasankalpApplication',
+    iosBundleId: 'com.dcc.navasankalp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -80,6 +80,6 @@ class DefaultFirebaseOptions {
     storageBucket: 'navasankalp-dd551.appspot.com',
     androidClientId: '761849461795-08b8ed1lgp82443i87erbvg3hli9ceu9.apps.googleusercontent.com',
     iosClientId: '761849461795-kdfbj1tirro8urdp7vggab72na29d8ka.apps.googleusercontent.com',
-    iosBundleId: 'com.example.navasankalpApplication.RunnerTests',
+    iosBundleId: 'com.dcc.navasankalp.RunnerTests',
   );
 }
