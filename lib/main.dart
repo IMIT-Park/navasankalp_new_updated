@@ -16,12 +16,9 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'app/utils/widgets/app_drawer/drawer_controller.dart';
 
 void main() async {
-   WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   // await getDevicetype();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform
-  );
-
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   await GetStorage.init();
   runApp(const MyApp());
@@ -50,8 +47,7 @@ class MyApp extends StatelessWidget {
         onInit: () {
           Get.put(NavaSankalpBEProvider());
           Get.put(GlobalDataProvider());
-         
-          
+          Get.put(DrawersController());
         },
         initialRoute: AppRoutes.splash,
         theme: AppThemes.themData,

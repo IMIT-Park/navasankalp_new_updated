@@ -60,22 +60,19 @@ class DrawersController extends GetxController {
     //     deviceId = 'Failed to get deviceId.';
     //   }
     // }
-
-   
   }
-   Future<void> signOut() async {
-      try {
-        // await _googleSignIn.signOut();
-        
-        final deleteToken = GetStorage();
-        await deleteToken.remove(_pref.accessToken.key);
-        await deleteToken.remove(_pref.refreshToken.key);
-        await _auth.signOut();
-        
-        Get.offNamedUntil(AppRoutes.login, (route) => false);
-        // Get.toNamed();
-      } catch (e) {
-        log("Error during sign out: $e");
-      }
+
+  Future<void> signOut() async {
+    try {
+      final deleteToken = GetStorage();
+      await deleteToken.remove(_pref.accessToken.key);
+      await deleteToken.remove(_pref.refreshToken.key);
+      await _googleSignIn.signOut();
+
+      Get.offNamedUntil(AppRoutes.login, (route) => false);
+      // Get.toNamed();
+    } catch (e) {
+      log("Error during sign out: $e");
     }
+  }
 }
