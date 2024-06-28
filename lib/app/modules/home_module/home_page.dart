@@ -368,52 +368,52 @@ class CustomSliverDelegate extends SliverPersistentHeaderDelegate {
                     () => Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CarouselSlider.builder(
-                          itemBuilder: (_, index, __) {
-                            return InkWell(
-                              onTap: () {
-                                Common.launchUrls(homeController
-                                    .homedata.value.carousel![index].link
-                                    .toString());
-                              },
-                              child: Container(
-                                margin: EdgeInsets.symmetric(
-                                    horizontal: Common.getDeviceSepcificDouble(
-                                        10,
-                                        desktopValue: 10),
-                                    vertical: Common.getDeviceSepcificDouble(20,
-                                        desktopValue: 10)),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(
-                                      Common.getDeviceSepcificDouble(5,
-                                          desktopValue: 5)),
-                                  image: DecorationImage(
-                                    image: NetworkImage(homeController.homedata
-                                            .value.carousel?[index].image
-                                            ?.attachAssetBaseURL() ??
-                                        ""),
-                                    fit: BoxFit.fitWidth,
+                         Expanded(
+                          child: CarouselSlider.builder(
+                            itemBuilder: (_, index, __) {
+                              return InkWell(
+                                onTap: () {
+                                  Common.launchUrls(homeController
+                                      .homedata.value.carousel![index].link
+                                      .toString());
+                                },
+                                child: Container(
+                                  margin: EdgeInsets.symmetric(
+                                      horizontal: Common.getDeviceSepcificDouble(
+                                          10,
+                                          desktopValue: 10),
+                                      vertical: Common.getDeviceSepcificDouble(20,
+                                          desktopValue: 10)),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(
+                                        Common.getDeviceSepcificDouble(5,
+                                            desktopValue: 5)),
+                                    image: DecorationImage(
+                                      image: NetworkImage(homeController.homedata
+                                              .value.carousel?[index].image
+                                              ?.attachAssetBaseURL() ??
+                                          ""),
+                                      fit: BoxFit.fitWidth,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            );
-                          },
-                          options: CarouselOptions(
-                            viewportFraction: 1,
-                            enableInfiniteScroll: true,
-                            autoPlay: true,
-                            autoPlayAnimationDuration:
-                                const Duration(seconds: 2),
-                            onPageChanged: (index, _) {},
+                              );
+                            },
+                            options: CarouselOptions(
+                              viewportFraction: 1,
+                              enableInfiniteScroll: true,
+                              autoPlay: true,
+                              autoPlayAnimationDuration: const Duration(seconds: 2),
+                              onPageChanged: (index, _) {},
+                            ),
+                            itemCount: homeController.homedata.value.carousel?.length ?? 0,
                           ),
-                          itemCount:
-                              homeController.homedata.value.carousel?.length ??
-                                  0,
                         ),
                         MediaQuery.of(context).orientation ==
                                 Orientation.portrait
                             ? const SizedBox()
-                            : Column(children: homeController.socialMedia)
+                            : 
+                            Column(children: homeController.socialMedia)
                       ],
                     ),
                   )),
