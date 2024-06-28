@@ -8,8 +8,8 @@ import 'package:navasankalp_application/app/utils/common.dart';
 import 'package:navasankalp_application/app/utils/nava_sankalp_pref.dart';
 
 class NotificationController extends GetxController {
-  final GlobalDataProvider _globalDataProvider = Get.find<GlobalDataProvider>();
-  final NavaSankalpBEProvider _provider = Get.find<NavaSankalpBEProvider>();
+  final GlobalDataProvider _globalDataProvider = GlobalDataProvider();
+  final NavaSankalpBEProvider _provider = NavaSankalpBEProvider();
   final FirebaseMessagingService _firebaseMessagingService =
       FirebaseMessagingService();
 

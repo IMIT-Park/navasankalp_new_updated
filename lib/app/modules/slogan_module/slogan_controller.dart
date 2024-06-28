@@ -5,7 +5,7 @@ import 'package:navasankalp_application/app/data/provider/navasankalp_be_provide
 import 'package:navasankalp_application/app/utils/common.dart';
 
 class SloganController extends GetxController {
-  final _provider = Get.find<NavaSankalpBEProvider>();
+  final _provider = NavaSankalpBEProvider();
   final sloganList = List<SloganModel>.empty(growable: true).obs;
 
   Future getSlogans() async {

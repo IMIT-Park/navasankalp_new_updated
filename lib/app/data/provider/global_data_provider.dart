@@ -11,7 +11,7 @@ class GlobalDataProvider {
   List<NotificationModel> notificationdata = [];
     AccountModel accountmodel = AccountModel();
 
-  final NavaSankalpBEProvider _backendProvider = Get.find<NavaSankalpBEProvider>();
+  final NavaSankalpBEProvider _backendProvider = NavaSankalpBEProvider();
 
   Future<List<NotificationModel>> getNotification() async {
     notificationdata = await _backendProvider.getNotification();

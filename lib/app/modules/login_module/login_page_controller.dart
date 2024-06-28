@@ -24,7 +24,7 @@ class LoginController extends GetxController {
   }
 
   final _pref = NavaSankalpPref();
-  final provider = Get.find<NavaSankalpBEProvider>();
+  final provider = NavaSankalpBEProvider();
   RxBool isLoading = false.obs;
   Future<UserCredential?> signInWithGoogle() async {
     isLoading.value =true;

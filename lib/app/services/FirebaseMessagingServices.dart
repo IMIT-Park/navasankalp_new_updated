@@ -11,8 +11,9 @@ class FirebaseMessagingService extends GetxController {
 
   void configureFirebaseMessaging(
       Function(NotificationModel) onNotificationReceived) async {
-    await _messaging.requestPermission();
-    await _messaging.getToken();
+    await _messaging.requestPermission().then((value) async {
+      await _messaging.getToken();
+    });
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       SnackBar(
@@ -20,13 +21,14 @@ class FirebaseMessagingService extends GetxController {
               'Received message: ${message.notification!.title} - ${message.notification!.body}'));
 
       if (message.notification != null) {
-        final notification = NotificationModel(message: '', 
-        title: '',
-         imageUrl: message.notification.toString(),
-         linkUrl: message.data['linkUrl'], 
-         readStatus: message.data['read_status'], 
-         createdAt: message.data['created_at'],
-          updatedAt: message.data['updated_at']);
+        final notification = NotificationModel(
+            message: '',
+            title: '',
+            imageUrl: message.notification.toString(),
+            linkUrl: message.data['linkUrl'],
+            readStatus: message.data['read_status'],
+            createdAt: message.data['created_at'],
+            updatedAt: message.data['updated_at']);
         // NotificationModel(
         //   title: message.notification!.title ?? '',
         //   body: message.notification!.body ?? '',
@@ -45,14 +47,14 @@ class FirebaseMessagingService extends GetxController {
 
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       if (message.notification != null) {
-        final notification = 
-   NotificationModel(message: '', 
-        title: '',
-         imageUrl: message.notification.toString(),
-         linkUrl: message.data['linkUrl'], 
-         readStatus: message.data['read_status'], 
-         createdAt: message.data['created_at'],
-          updatedAt: message.data['updated_at']);
+        final notification = NotificationModel(
+            message: '',
+            title: '',
+            imageUrl: message.notification.toString(),
+            linkUrl: message.data['linkUrl'],
+            readStatus: message.data['read_status'],
+            createdAt: message.data['created_at'],
+            updatedAt: message.data['updated_at']);
         // NotificationModel(
         //   title: message.notification!.title ?? '',
         //   body: message.notification!.body ?? '',

@@ -45,9 +45,9 @@ class MyApp extends StatelessWidget {
           ],
         ),
         onInit: () {
-          Get.put(NavaSankalpBEProvider());
-          Get.put(GlobalDataProvider());
-          Get.put(DrawersController());
+          
+          
+          // Get.put(DrawersController());
         },
         initialRoute: AppRoutes.splash,
         theme: AppThemes.themData,

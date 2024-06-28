@@ -5,8 +5,8 @@ import 'package:navasankalp_application/app/data/provider/navasankalp_be_provide
 import 'package:navasankalp_application/app/utils/common.dart';
 
 class HistoryController extends GetxController {
-  final NavaSankalpBEProvider _provider = Get.find<NavaSankalpBEProvider>();
-  final GlobalDataProvider _globalDataProvider = Get.find<GlobalDataProvider>();
+  final NavaSankalpBEProvider _provider = NavaSankalpBEProvider();
+  final GlobalDataProvider _globalDataProvider = GlobalDataProvider();
   final historyList = List<HistoryModel>.empty(growable: true).obs;
 
   HistoryController() {

@@ -5,7 +5,7 @@ import 'package:navasankalp_application/app/utils/common.dart';
 
 class TransactionController extends GetxController {
   TransactionController();
-  final NavaSankalpBEProvider _provider = Get.find<NavaSankalpBEProvider>();
+  final NavaSankalpBEProvider _provider = NavaSankalpBEProvider();
   final transactionList = List<TransactionModel>.empty(growable: true).obs;
   Future getTransaction() async {
     transactionList.value = await _provider.getTransactions();

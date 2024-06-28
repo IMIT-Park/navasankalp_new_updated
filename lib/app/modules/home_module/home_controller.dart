@@ -17,7 +17,7 @@ class HomeController extends GetxController {
 
 
   final homedata = HomeModel().obs;
-  final _provider = Get.find<NavaSankalpBEProvider>();
+  final _provider = NavaSankalpBEProvider();
   Future getHomeData() async {
     homedata.value = await _provider.getHomeData();
   }
@@ -32,7 +32,7 @@ class HomeController extends GetxController {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final NavaSankalpBEProvider provider = Get.find<NavaSankalpBEProvider>();
+  final NavaSankalpBEProvider provider = NavaSankalpBEProvider();
 
   // final amountKey = GlobalKey<FormState>();
 

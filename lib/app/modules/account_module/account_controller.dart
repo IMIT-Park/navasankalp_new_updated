@@ -11,7 +11,7 @@ import 'package:navasankalp_application/app/utils/common.dart';
 import 'package:navasankalp_application/app/utils/nava_sankalp_icons.dart';
 import 'package:navasankalp_application/app/utils/widgets/app_drawer/drawer_controller.dart';
 class AccountController extends GetxController {
-  final NavaSankalpBEProvider _beProvider = Get.find<NavaSankalpBEProvider>();
+  final NavaSankalpBEProvider _beProvider = NavaSankalpBEProvider();
   TextEditingController nameController = TextEditingController();
   TextEditingController addressController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
