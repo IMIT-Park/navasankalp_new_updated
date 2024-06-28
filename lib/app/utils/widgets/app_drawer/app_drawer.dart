@@ -48,9 +48,8 @@ var arrayOfListTiles = [
     Get.to(const PrivacyPolicyPage());
   }, false),
   DrawerTileData(NavaSankalp.logout, "Log Out", () {
-    final drawerController=Get.find<DrawersController>();
-   
-    drawerController.signOut();
+    DrawersController drawersController = Get.put(DrawersController());
+    drawersController.signOut();
   }, false),
 ];
 
@@ -65,11 +64,11 @@ class CustomAppDrawer extends GetWidget<DrawersController> {
       width:
           GetPlatform.isMobile && Get.context!.isPhone ? Get.width * 1 : null,
       color: AppColors.white,
-      child: drawerWidget(controller),
+      child: drawerWidget(),
     );
   }
 
-  Drawer drawerWidget(controller) {
+  Drawer drawerWidget() {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.only(
@@ -77,7 +76,7 @@ class CustomAppDrawer extends GetWidget<DrawersController> {
             right: 10,
             top: GetPlatform.isMobile && Get.context!.isPhone ? 25 : 0),
         children: [
-          getDrawerHeader(controller),
+          getDrawerHeader(),
           const SizedBox(
             height: 22,
           ),
@@ -123,8 +122,8 @@ class CustomAppDrawer extends GetWidget<DrawersController> {
     );
   }
 
-  Widget getDrawerHeader( controller) {
-
+  Widget getDrawerHeader() {
+    final drawercontroller = Get.find<DrawersController>();
 
     return SizedBox(
       height: 150,
@@ -134,11 +133,11 @@ class CustomAppDrawer extends GetWidget<DrawersController> {
           children: [
             Expanded(
               child: Obx(() => CircleAvatarWithText(
-                    imageUrl: controller.photo.isNotEmpty
-                        ? "${EndPoints.assetBaseUrl}${controller.photo}"
+                    imageUrl: drawercontroller.photo.isNotEmpty
+                        ? "${EndPoints.assetBaseUrl}${drawercontroller.photo}"
                         : "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
-                    username: controller.name.isNotEmpty
-                        ? controller.name.value
+                    username: drawercontroller.name.isNotEmpty
+                        ? drawercontroller.name.value
                         : "User",
                   )),
             ),
@@ -213,7 +212,7 @@ class CustomAppDrawer extends GetWidget<DrawersController> {
   ListTile setListTile(
       IconData iconData, String data, GestureTapCallback onTap, bool trailing) {
     Color itemColor = AppColors.black.withAlpha(127);
-    GlobalDataProvider globalDataProvider = GlobalDataProvider();
+    final globalDataProvider = GlobalDataProvider();
     return ListTile(
       leading: Icon(
         iconData,
