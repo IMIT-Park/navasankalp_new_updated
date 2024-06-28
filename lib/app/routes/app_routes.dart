@@ -15,5 +15,5 @@ class AppRoutes {
   static const directory = '/directory'; //directory page
   static const phoneregister = '/loginPage'; //Login page
   static const splash = '/splashPage'; //splash
-  static const drawer = '/drawer'; //drawer
+  static const drawer = '/customAppDrawer'; //CustomAppDrawer
 }
