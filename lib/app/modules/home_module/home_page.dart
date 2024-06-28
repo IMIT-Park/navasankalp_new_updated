@@ -191,7 +191,7 @@ class HomePage extends GetWidget<HomeController> {
                             Common.getDeviceSepcificDouble(5, desktopValue: 5)),
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount:
+                    itemCount: 
                         homeController.homedata.value.sponsoredBanner?.length ??
                             0,
                     itemBuilder: (BuildContext context, int index) {
