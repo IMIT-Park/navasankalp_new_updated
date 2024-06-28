@@ -11,11 +11,6 @@ import 'package:navasankalp_application/app/utils/nava_sankalp_icons.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class HomeController extends GetxController {
-
-
-
-
-
   final homedata = HomeModel().obs;
   final _provider = NavaSankalpBEProvider();
   Future getHomeData() async {
@@ -27,8 +22,6 @@ class HomeController extends GetxController {
     super.onReady();
     Common.safeApiCall(getHomeData());
   }
-
-  
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -45,39 +38,38 @@ class HomeController extends GetxController {
     '5000',
   ];
 
-final socialMedia = [
-  Flexible(
-    flex: 20,
-    child: appIconButton(
-      name: "History",
-      iconData: NavaSankalp.history,
-      onTap: () {
-        Get.toNamed(AppRoutes.history);
-      },
+  final socialMedia = [
+    Flexible(
+      flex: 20,
+      child: appIconButton(
+        name: "History",
+        iconData: NavaSankalp.history,
+        onTap: () {
+          Get.toNamed(AppRoutes.history);
+        },
+      ),
     ),
-  ),
-  Flexible(
-    flex: 20,
-    child: appIconButton(
-      name: "Directory",
-      iconData: NavaSankalp.directory,
-      onTap: () {
-        Get.toNamed(AppRoutes.directory);
-      },
+    Flexible(
+      flex: 20,
+      child: appIconButton(
+        name: "Directory",
+        iconData: NavaSankalp.directory,
+        onTap: () {
+          Get.toNamed(AppRoutes.directory);
+        },
+      ),
     ),
-  ),
-  Flexible(
-    flex: 20,
-    child: appIconButton(
-      name: "Slogan",
-      iconData: NavaSankalp.slogan,
-      onTap: () {
-        Get.toNamed(AppRoutes.slogan);
-      },
-    ),
-  )
-];
-
+    Flexible(
+      flex: 20,
+      child: appIconButton(
+        name: "Slogan",
+        iconData: NavaSankalp.slogan,
+        onTap: () {
+          Get.toNamed(AppRoutes.slogan);
+        },
+      ),
+    )
+  ];
 
   final amountController = TextEditingController();
   var selectedButton = 0.obs;
@@ -114,7 +106,6 @@ final socialMedia = [
     final selectedAmount1 = double.parse(amount);
     startPayment(selectedAmount1);
   }
-
 
   final paymentrequest = PaymentRequestModel();
 

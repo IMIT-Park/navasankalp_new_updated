@@ -37,7 +37,7 @@ class DrawersController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    Common.safeApiCall(getUserData());
+   getUserData();
   }
 
   @override

@@ -1,6 +1,9 @@
 import 'dart:developer';
+import 'dart:io';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:navasankalp_application/app/data/model/login_model.dart';
@@ -16,10 +19,11 @@ class LoginController extends GetxController {
 
   @override
   void onInit() {
-    final notificationController = Get.put<NotificationController>(NotificationController());
+    final notificationController =
+        Get.put<NotificationController>(NotificationController());
     notificationController.initialize();
     // initPlatformState();
-    // getDeviceIdentifier();
+    getDeviceId();
     super.onInit();
   }
 
@@ -27,7 +31,7 @@ class LoginController extends GetxController {
   final provider = NavaSankalpBEProvider();
   RxBool isLoading = false.obs;
   Future<UserCredential?> signInWithGoogle() async {
-    isLoading.value =true;
+    isLoading.value = true;
     // update();
     try {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
@@ -48,15 +52,14 @@ class LoginController extends GetxController {
       UserLoginRequest login = UserLoginRequest(
         googleToken: googleAuth.accessToken,
       );
-      
 
       debugPrint(_pref.googleAccessToken.val);
       await provider.loginUser(login).then((value) async {
         await Future.delayed(const Duration(seconds: 2), () {
           _pref.accessToken.val = value.accessToken ?? "";
           _pref.refreshToken.val = value.refreshToken ?? "";
-           isLoading.value =false;
-           update();
+          isLoading.value = false;
+          update();
         });
 
         log(_pref.refreshToken.val);
@@ -71,44 +74,24 @@ class LoginController extends GetxController {
     }
   }
 
-  // Future<void> signOut() async {
-  //   try {
-  //     await _googleSignIn.signOut();
-  //     await _auth.signOut();
-  //     final deleteToken = GetStorage();
-  //     await deleteToken.remove(_pref.accessToken.key);
-  //     await deleteToken.remove(_pref.refreshToken.key);
-  //     await deleteToken.remove(_pref.googleAccessToken.key);
-  //     await deleteToken.remove(_pref.deviceid.key);
-  //     await deleteToken.remove(_pref.devicetoken.key);
-  //     Navigator.pop(Get.context!);
-  //     Get.toNamed(AppRoutes.login);
-  //   } catch (e) {
-  //     log("Error during sign out: $e");
-  //   }
-  // }
-
-  // Future<void> initPlatformState() async {
-  //   String? deviceId;
-  //   // Platform messages may fail, so we use a try/catch PlatformException.
-  //   try {
-  //     deviceId = await PlatformDeviceId.getDeviceId;
-
-  //     await Future.delayed(Duration(seconds: 2), () {
-  //       _pref.deviceid.val = deviceId ?? "";
-  //       debugPrint("device id $deviceId");
-  //     });
-  //   } on PlatformException {
-  //     deviceId = 'Failed to get deviceId.';
-  //   }
+  Future<void> getDeviceId() async {
+    DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+    if (Platform.isAndroid) {
+      AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+      _pref.deviceid.val = androidInfo.id;
+    } else if (Platform.isIOS) {
+      IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
+      _pref.deviceid.val = iosInfo.utsname.machine;
+    }
+  }
 
   //   void setLoading(RxBool loading) {
   //     isLoading = loading;
   //     update();
   //   }
   // }
-      void setLoading(RxBool loading) {
-      isLoading = loading;
-      update();
-    }
+  void setLoading(RxBool loading) {
+    isLoading = loading;
+    update();
+  }
 }
