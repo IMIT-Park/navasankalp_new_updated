@@ -68,8 +68,8 @@ class LoginController extends GetxController {
       });
       return await _auth.signInWithCredential(credential);
     } catch (e) {
-      Common.showError("Error during Google Sign In: $e");
-      // log(e.toString());
+      // Common.showError("Error during Google Sign In: $e");
+      log(e.toString());
       return null;
     }
   }
