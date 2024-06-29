@@ -10,6 +10,7 @@ import 'package:navasankalp_application/app/data/provider/navasankalp_be_provide
 import 'package:navasankalp_application/app/utils/common.dart';
 import 'package:navasankalp_application/app/utils/nava_sankalp_icons.dart';
 import 'package:navasankalp_application/app/utils/widgets/app_drawer/drawer_controller.dart';
+
 class AccountController extends GetxController {
   final NavaSankalpBEProvider _beProvider = NavaSankalpBEProvider();
   TextEditingController nameController = TextEditingController();
@@ -137,10 +138,8 @@ class AccountController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    Common.safeApiCall(
-      getAccountData(),
-    );
-    Common.safeApiCall(getBlocklist());
-    Common.safeApiCall(getDistrictlist());
+    getAccountData();
+    getBlocklist();
+    getDistrictlist();
   }
 }

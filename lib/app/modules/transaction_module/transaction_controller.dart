@@ -15,9 +15,9 @@ class TransactionController extends GetxController {
   void onReady() {
     super.onReady();
     if (transactionList.isEmpty) {
-      Common.safeApiCall(getTransaction());
+      getTransaction();
     } else {
-      Common.safeApiCall(getTransaction(), showBloackingUI: false);
+      getTransaction();
     }
   }
 }
