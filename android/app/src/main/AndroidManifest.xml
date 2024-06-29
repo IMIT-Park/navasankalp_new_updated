@@ -2,7 +2,7 @@
     <application
         android:label="navasankalp_application"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/navasankalp">
         <activity
             android:name=".MainActivity"
             android:exported="true"
