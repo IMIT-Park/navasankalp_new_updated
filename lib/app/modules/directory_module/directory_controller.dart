@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:collection/collection.dart';
@@ -26,7 +28,7 @@ class DirectoryController extends GetxController {
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {
-      print("cannot launch this url");
+      log("cannot launch this url");
     }
   }
 
@@ -35,7 +37,7 @@ class DirectoryController extends GetxController {
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {
-      print("cannot launch this url");
+      log("cannot launch this url");
     }
   }
 

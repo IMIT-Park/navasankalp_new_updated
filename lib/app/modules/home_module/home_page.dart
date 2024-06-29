@@ -326,7 +326,7 @@ class CustomSliverDelegate extends SliverPersistentHeaderDelegate {
                 backgroundColor: AppColors.transparent,
                 leading: Builder(builder: (context) {
                   return IconButton(
-                    icon: const Icon(NavaSankalp.menu_left,color: AppColors.white),
+                    icon: const Icon(NavaSankalp.menuLeft,color: AppColors.white),
                     onPressed: () {
                       return Scaffold.of(context).openDrawer();
                     },

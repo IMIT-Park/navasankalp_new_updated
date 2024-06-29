@@ -31,10 +31,10 @@ class NavaSankalp {
   // ignore: constant_identifier_names
   static const IconData arrow_downwards = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData edit = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData menu_left = IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData menuLeft = IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData logout = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData history = IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData three_dot_menu = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData threeDotMenu = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   // ignore: constant_identifier_names
   static const IconData notification_solid_badged = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData plus = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
@@ -52,7 +52,7 @@ class NavaSankalp {
   static const IconData slogan = IconData(0xe816, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData mail = IconData(0xe817, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData phone = IconData(0xe818, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData expand_less = IconData(0xe819, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData expandLess = IconData(0xe819, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData nameicon = IconData(0xe81e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   // ignore: constant_identifier_names
   static const IconData address_icon = IconData(0xe81f, fontFamily: _kFontFam, fontPackage: _kFontPkg);

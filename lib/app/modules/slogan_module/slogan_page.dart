@@ -84,7 +84,7 @@ Widget getMenuWidget({
                 controller.open();
               }
             },
-            icon: const Icon(NavaSankalp.three_dot_menu),
+            icon: const Icon(NavaSankalp.threeDotMenu),
           );
         },
         menuChildren: <Widget>[

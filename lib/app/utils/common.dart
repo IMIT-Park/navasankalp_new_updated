@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -103,7 +104,7 @@ static void launchUrls(String url)async{
     if (!await launchUrl(urls)) {
       throw Exception('Could not launch $urls');
     }else {
-      print('Could not launch $url');
+      log('Could not launch $url');
     }
 }
 

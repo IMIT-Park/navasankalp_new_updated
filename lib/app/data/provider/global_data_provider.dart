@@ -1,4 +1,3 @@
-import 'package:get/get.dart';
 import 'package:navasankalp_application/app/data/model/history_model.dart';
 import 'package:navasankalp_application/app/data/model/notification_model.dart';
 import 'package:navasankalp_application/app/data/provider/navasankalp_be_provider.dart';

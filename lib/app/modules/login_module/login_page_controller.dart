@@ -3,14 +3,12 @@ import 'dart:io';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:navasankalp_application/app/data/model/login_model.dart';
 import 'package:navasankalp_application/app/data/provider/navasankalp_be_provider.dart';
 import 'package:navasankalp_application/app/modules/app_notification_module/app_notification_controller.dart';
 import 'package:navasankalp_application/app/routes/app_pages.dart';
-import 'package:navasankalp_application/app/utils/common.dart';
 import 'package:navasankalp_application/app/utils/nava_sankalp_pref.dart';
 
 class LoginController extends GetxController {

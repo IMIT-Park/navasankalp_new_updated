@@ -1,9 +1,11 @@
+import 'dart:developer';
+
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 import 'package:navasankalp_application/app/data/model/notification_model.dart';
 import 'package:navasankalp_application/app/data/provider/global_data_provider.dart';
 import 'package:navasankalp_application/app/data/provider/navasankalp_be_provider.dart';
-import 'package:navasankalp_application/app/services/FirebaseMessagingServices.dart';
+import 'package:navasankalp_application/app/services/firebase_messaging_services.dart';
 import 'package:navasankalp_application/app/utils/common.dart';
 import 'package:navasankalp_application/app/utils/nava_sankalp_pref.dart';
 
@@ -24,7 +26,7 @@ class NotificationController extends GetxController {
 
   void handleNotification(NotificationModel notification) {
     notificationList.add(notification);
-    print('Notification added: ${notification.userId}');
+    log('Notification added: ${notification.userId}');
     update(); // Notify listeners that the list has changed
   }
 
@@ -47,7 +49,7 @@ class NotificationController extends GetxController {
       _pref.devicetoken.val = token ?? "";
     });
     _pref.devicetoken.val = token ?? "";
-    print('Device Token: $token');
+    log('Device Token: $token');
   }
 
   NotificationController() {

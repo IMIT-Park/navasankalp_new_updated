@@ -2,14 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:navasankalp_application/app/data/provider/global_data_provider.dart';
-import 'package:navasankalp_application/app/data/provider/navasankalp_be_provider.dart';
 import 'package:navasankalp_application/app/routes/app_pages.dart';
 import 'package:navasankalp_application/app/themes/app_theme.dart';
 import 'package:navasankalp_application/app/translations/app_translations.dart';
 import 'package:navasankalp_application/app/utils/common.dart';
 import 'package:navasankalp_application/app/utils/extensions.dart';
-import 'package:navasankalp_application/app/utils/nava_sankalp_pref.dart';
 import 'package:navasankalp_application/firebase_options.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
