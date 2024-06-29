@@ -11,6 +11,7 @@ import 'package:navasankalp_application/app/utils/common.dart';
 import 'package:navasankalp_application/app/utils/constants.dart';
 import 'package:navasankalp_application/app/utils/nava_sankalp_icons.dart';
 import 'package:navasankalp_application/app/utils/widgets/app_button/app_button.dart';
+import 'package:navasankalp_application/app/utils/widgets/app_drawer/drawer_controller.dart';
 import 'package:navasankalp_application/app/utils/widgets/app_dropdown/app_dropdownmenu.dart';
 import 'package:navasankalp_application/app/utils/widgets/app_text_field/app_text_field.dart';
 import 'package:snap_scroll_physics/snap_scroll_physics.dart';
@@ -22,7 +23,6 @@ class AccountPage extends GetWidget<AccountController> {
   Widget build(BuildContext context) {
     final accountController = Get.find<AccountController>();
     return Scaffold(
-
       resizeToAvoidBottomInset: false,
       body: CustomScrollView(
         physics: SnapScrollPhysics(
@@ -285,8 +285,11 @@ Widget avatarWidget(double radius, double profileiconsize, double plusiconsize,
                 ? CircleAvatar(
                     backgroundImage: accountController.isEditing.value
                         ? Image.file(File(imageURL)).image
-                        : Image.network("${EndPoints.assetBaseUrl}$imageURL")
-                            .image,
+                        : accountController.imagePath.value.startsWith('https:')
+                            ? Image.network(imageURL).image
+                            : Image.network(
+                                    "${EndPoints.assetBaseUrl}$imageURL")
+                                .image,
                     backgroundColor: AppColors.white,
                     radius: radius,
                   )
@@ -380,9 +383,13 @@ class CustomSliverDelegate extends SliverPersistentHeaderDelegate {
             leading: IconButton(
               icon: Icon(
                 NavaSankalp.back,
-                size: Common.getDeviceSepcificDouble(18, desktopValue: 15),color: AppColors.white,
+                size: Common.getDeviceSepcificDouble(18, desktopValue: 15),
+                color: AppColors.white,
               ),
               onPressed: () {
+                DrawersController drawerController =
+                    Get.find<DrawersController>();
+                drawerController.getUserData();
                 Navigator.pop(Get.overlayContext!);
               },
             ),
