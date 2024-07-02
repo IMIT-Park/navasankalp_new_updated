@@ -13,7 +13,7 @@ class DirectoryController extends GetxController {
   final ScrollController controller = ScrollController();
   final directoryData = DirectoryModel().obs;
   final _provider = NavaSankalpBEProvider();
-  final groupedMap = Map<dynamic, List<Datum>>().obs;
+  final groupedMap = <dynamic, List<Datum>>{}.obs;
   Future getDirectory() async {
     directoryData.value = await _provider.getDirectory();
     groupedMap.value = groupBy(

@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:navasankalp_application/app/data/model/transaction_model.dart';
 import 'package:navasankalp_application/app/data/provider/navasankalp_be_provider.dart';
-import 'package:navasankalp_application/app/utils/common.dart';
 
 class TransactionController extends GetxController {
   TransactionController();
