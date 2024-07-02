@@ -32,19 +32,14 @@ class DrawersController extends GetxController {
     name.value = result.name.toString();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-   getUserData();
-  }
-
+ 
   @override
   void onInit() {
     final notificationController =
         Get.put<NotificationController>(NotificationController());
     notificationController.initialize();
     initPlatformState();
-    // getDeviceIdentifier();
+     getUserData();
     super.onInit();
   }
 

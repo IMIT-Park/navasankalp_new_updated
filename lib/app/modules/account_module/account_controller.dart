@@ -36,7 +36,7 @@ class AccountController extends GetxController {
     addAccountModel.photo = imagePath.value;
     var response = await _beProvider.updateAccountdata(addAccountModel);
     log(response.district.toString());
-    DrawersController drawerController = Get.find<DrawersController>();
+    final drawerController = Get.find<DrawersController>();
     await drawerController.getUserData();
   }
 
@@ -136,9 +136,9 @@ class AccountController extends GetxController {
   }
 
   @override
-  void onReady() {
-    super.onReady();
-    getAccountData();
+  void onInit() {
+    super.onInit();
+    Common.safeApiCall(getAccountData());
     getBlocklist();
     getDistrictlist();
   }

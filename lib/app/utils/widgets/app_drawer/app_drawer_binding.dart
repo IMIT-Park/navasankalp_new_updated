@@ -4,7 +4,7 @@ import 'package:navasankalp_application/app/utils/widgets/app_drawer/drawer_cont
 class AppDrawerBindings implements Bindings{
   @override
   void dependencies() {
-    Get.lazyPut<DrawersController>(() => DrawersController());
+   Get.lazyPut(()=>DrawersController());
   }
 
 }

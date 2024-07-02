@@ -42,8 +42,6 @@ class MyApp extends StatelessWidget {
           ],
         ),
         onInit: () {
-          
-          
           Get.put(DrawersController());
         },
         initialRoute: AppRoutes.splash,

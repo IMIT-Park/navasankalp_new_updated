@@ -48,15 +48,13 @@ var arrayOfListTiles = [
     Get.to(const PrivacyPolicyPage());
   }, false),
   DrawerTileData(NavaSankalp.logout, "Log Out", () {
-    DrawersController drawersController = Get.put(DrawersController());
+    final drawersController = Get.find<DrawersController>();
     drawersController.signOut();
   }, false),
 ];
 
 class CustomAppDrawer extends GetWidget<DrawersController> {
-  const CustomAppDrawer({
-    super.key,
-  });
+  const CustomAppDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,11 +62,11 @@ class CustomAppDrawer extends GetWidget<DrawersController> {
       width:
           GetPlatform.isMobile && Get.context!.isPhone ? Get.width * 1 : null,
       color: AppColors.white,
-      child: drawerWidget(),
+      child: drawerWidget(controller),
     );
   }
 
-  Drawer drawerWidget() {
+  Drawer drawerWidget(controller) {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.only(
@@ -76,7 +74,7 @@ class CustomAppDrawer extends GetWidget<DrawersController> {
             right: 10,
             top: GetPlatform.isMobile && Get.context!.isPhone ? 25 : 0),
         children: [
-          getDrawerHeader(),
+          getDrawerHeader(controller),
           const SizedBox(
             height: 22,
           ),
@@ -122,9 +120,7 @@ class CustomAppDrawer extends GetWidget<DrawersController> {
     );
   }
 
-  Widget getDrawerHeader() {
-    final drawercontroller = Get.find<DrawersController>();
-
+  Widget getDrawerHeader(DrawersController contrller) {
     return SizedBox(
       height: 150,
       child: DrawerHeader(
@@ -133,13 +129,13 @@ class CustomAppDrawer extends GetWidget<DrawersController> {
           children: [
             Expanded(
               child: Obx(() => CircleAvatarWithText(
-                    imageUrl: drawercontroller.photo.isNotEmpty
-                        ? drawercontroller.photo.value.startsWith("https:")
-                            ? drawercontroller.photo.value
-                            : "${EndPoints.assetBaseUrl}${drawercontroller.photo.value}"
+                    imageUrl: contrller.photo.isNotEmpty
+                        ? contrller.photo.value.startsWith("https:")
+                            ? contrller.photo.value
+                            : "${EndPoints.assetBaseUrl}${contrller.photo.value}"
                         : "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
-                    username: drawercontroller.name.isNotEmpty
-                        ? drawercontroller.name.value
+                    username: contrller.name.isNotEmpty
+                        ? contrller.name.value
                         : "User",
                   )),
             ),
